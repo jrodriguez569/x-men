@@ -1,0 +1,5 @@
+"{""dna"": [""ATGCGA"",""CAGTGC"",""TTATGT"",""AGAAGG"",""CCCCTA"",""TCACTG""]}"|200
+"{""dna"": [""ATGCGA"",""CAGTTC"",""TTCTGT"",""AGAAGG"",""CCACTA"",""TCACTG""]}"|403
+"{""dna"": [""ATGCG"",""CAGTG"",""TTATG"",""AGAAG"",""CCCCT""]}"|200
+"{""dna"": [""ATG"",""CAG"",""TTA""]}"|403
+"{""dna"": [""ATGCGACC"",""CAGTGCAA"",""TTATGTTT"",""AGAAGGGG"",""CCCCTAGG"",""TCACTGGG""]}"|403
