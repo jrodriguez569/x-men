@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "NODE_ENV=development nodemon --exec babel-node src/index.js",
     "test": "LD_LIBRARY_PATH=./test/lib/data/lib/x86_64-linux-gnu nyc --reporter=html --reporter=text mocha --require @babel/register",
-    "build": "babel --presets es2015 -d lib/ src",
+    "build": "babel -d lib/ src",
+    "docker": "npm run build && docker build -t jrodriguez-test .",
     "artillery": "artillery run artillery.yaml",
     "start": "nodejs index.js"
   },
@@ -16,7 +17,6 @@
     "@babel/cli": "^7.4.3",
     "@babel/core": "^7.4.3",
     "@babel/node": "^7.2.2",
-    "@babel/polyfill": "^7.4.4",
     "@babel/preset-env": "^7.4.3",
     "@babel/register": "^7.4.0",
     "artillery": "^1.6.0-27",
@@ -26,9 +26,10 @@
     "mocha-prepare": "^0.1.0",
     "mongodb-memory-server": "^5.1.0",
     "nodemon": "^1.18.11",
-    "nyc": "^14.0.0"
+	"nyc": "^14.0.0"
   },
   "dependencies": {
+	"@babel/polyfill": "^7.4.4",
     "dotenv": "^8.0.0",
     "mongodb": "^3.2.3",
     "restify": "^8.3.1"
