@@ -1,0 +1,24 @@
+config:
+  target: http://localhost:3000
+  plugins:
+    expect: {}
+  phases:
+    - duration: 10
+      arrivalRate: 500
+      name: "Warm up the application"
+  payload:
+    path: "./test/payloads.csv"
+    delimiter: "|"
+    fields:
+      - "payload"
+      - "expected"
+scenarios:
+  - flow:
+      - post:
+          url: "/mutant"
+          headers:
+            Content-Type: "application/json"
+          body: "{{payload}}"
+          expect:
+            - statusCode: "{{expected}}"
+            - contentType: "application/json"
